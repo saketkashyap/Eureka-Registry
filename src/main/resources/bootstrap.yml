@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Eureka-Registry
+    
+server:
+  port: ${PORT:8200}    
+
+eureka:
+  instance:
+    hostname: localhost
+    
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    fetch-registry: false
+    register-with-eureka: false
